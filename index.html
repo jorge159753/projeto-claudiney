@@ -15,64 +15,6 @@
 
      <button id="toggle-mode">Carregando...</button>
   
-    
-
-   <script>
-    
-const button = document.getElementById('toggle-mode');
-const body = document.body;
-
-// Atualiza o texto do botão
-function atualizarBotao() {
-  if (body.classList.contains('dark-mode')) {
-    button.innerHTML = '☀️ Ativar Modo Claro';
-  } else {
-    button.innerHTML = '🌙 Ativar Modo Escuro';
-  }
-}
-
-// Detecta o modo do sistema
-function detectarPreferenciaSistema() {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-}
-
-// Aplica o modo
-function aplicarModo(modo) {
-  if (modo === 'escuro') {
-    body.classList.add('dark-mode');
-  } else {
-    body.classList.remove('dark-mode');
-  }
-  atualizarBotao();
-}
-
-// Ao clicar no botão, alterna o modo
-button.addEventListener('click', () => {
-  const modoAtual = body.classList.contains('dark-mode') ? 'escuro' : 'claro';
-  const novoModo = modoAtual === 'escuro' ? 'claro' : 'escuro';
-  aplicarModo(novoModo);
-
-  // Salva a escolha do usuário
-  localStorage.setItem('modo', novoModo);
-});
-
-// Ao carregar a página
-window.addEventListener('load', () => {
-  const modoSalvo = localStorage.getItem('modo');
-
-  if (modoSalvo) {
-    aplicarModo(modoSalvo);
-  } else {
-    const modoSistema = detectarPreferenciaSistema() ? 'escuro' : 'claro';
-    aplicarModo(modoSistema);
-  }
-});
-
-   </script>
-
-
-    
-  
     <header class="header-container">
         <div class="header-bar">
             <H1 class="nome-site">OXENTE!!!!</H1>
@@ -104,10 +46,7 @@ window.addEventListener('load', () => {
         <ul class="nav-links">
             <li class="link"><a href="#">Pagina inicial</a></li>
             <li class="link1"><a href="#">Localização</a></li>
-            <li class="link2"><a href="#">Encomendaas</a></li>
-            <li class="link3"><a href="#">Brinquedos</a></li>
-            <li class="link4"><a href="#">Vestuário</a></li>
-            <li class="link5"><a href="#">Variedades</a></li>
+            <li class="link2"><a href="#">Encomendas</a></li>
             <li class="link6"><a href="#">Sobre nós</a></li>
             <li class="link7"><a href="#">Contatos</a></li>
         </ul>
@@ -159,24 +98,23 @@ window.addEventListener('load', () => {
     </section>
 
     <!--Banners menores-->
-    <section class="banner-menor">
-        <img src="imgs/bolsa lateral preta aracajuana.png" alt="">
-
-        <div class="card-product">
-             <h2>Bolsa lateral- Noite aracajuana</h2>
-             <button class="button-details">VER DETALHES</button>
-
+    <section class="container">
+        <div>
+            <img src="imgs/bolsa lateral preta aracajuana.png" alt="Bolsa lateral - Noite aracajuana">
+                <h2>Bolsa lateral - Noite aracajuana</h2>
+                <button class="button-details">VER DETALHES</button>
         </div>
-        <img src="imgs/michila listrada passeio na sementeira.png" alt="">
-        <div class="card-product">
-            <h2>Mochila tecido</h2>
-            <button class="button-details">VER DETALHES</button>
+
+        <div>
+            <img src="imgs/michila listrada passeio na sementeira.png" alt="Mochila tecido">
+                <h2>Mochila tecido</h2>
+                <button class="button-details">VER DETALHES</button>
         </div>
     </section>
 
-
+    <hr>
     <H1>Os mais vendidos</H1>
-
+    <hr>
 
     <section class="list-product" id="produtos">
         <div>
@@ -184,43 +122,44 @@ window.addEventListener('load', () => {
             <h3>Bolsa lateral - bege e marrom</h3>
             <p>★★★★★</p>
             <h2>R$ 35,00</h2>
-        <div>
+        </div>
 
         <div>
             <img src="imgs/bolsa lateral preta aracajuana.png" alt="">
-            <h3>Bolsa - lateral - preta noite aracajuana</h3>
+            <h3>Bolsa lateral - preta noite aracajuana</h3>
             <p>★★★★★</p>
             <h2>R$ 50,00</h2>
-        <div>
+        </div>
 
         <div>
             <img src="imgs/michila listrada passeio na sementeira.png" alt="">
-            <h3>Mochila listrada- passeio na sementeira</h3>
+            <h3>Mochila listrada - passeio na sementeira</h3>
             <p>★★★★★</p>
             <h2>R$ 60,00</h2>
-        <div>
+        </div>
 
         <div>
             <img src="imgs/boneca de pano.png" alt="">
             <h3>Boneca de pano</h3>
             <p>★★★★★</p>
             <h2>R$ 30,00</h2>
-        <div>
+        </div>
 
         <div>
             <img src="imgs/Lapis decorativo filhos de lampiao.png" alt="">
             <h3>Lápis decorativo</h3>
             <p>★★★★★</p>
             <h2>R$ 10,00</h2>
-        <div>
+        </div>
 
         <div>
             <img src="imgs/canecas e portas copos personalizados.png" alt="">
             <h3>Canecas e portas copos personalizados</h3>
             <p>★★★★★</p>
             <h2>R$ 20,00</h2>
-        <div>
+        </div>
     </section>
+
 
     <button>MAIS PRODUTOS</button>
 
@@ -236,7 +175,7 @@ window.addEventListener('load', () => {
 
     
     <section class="banner-grande">
-        <img src="Captura de tela 2025-10-13 222705.png" alt="">
+        <img src="imgs/pasadeira.png" alt="">
         <div class="conteudo">
             <h2>Passadeira- Flor do cajueiro</h2>
             <p class="promo">R$50,00</p><p><s>R$75,00</s></p>
